@@ -38,7 +38,8 @@ else{
 	//$requete->execute(array());
 	$requete->execute(array());
 
-
+	session_start();
+	$_SESSION['user']=$username;
 	echo 'Felicitation vous etes bien inscrit !';
 }
 
