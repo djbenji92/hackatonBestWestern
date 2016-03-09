@@ -33,17 +33,17 @@ if(isset($_FILES['avatar']))
 function listeHotel(){
 include("conf/accesBDD.php");
 
-	$sql = "SELECT nomHotel, departementHotel, adresseHotel, descriptionHotel, imageHotel from hotels";
+	$sql = "SELECT * from hotels";
 	$requete = $connexion->prepare($sql);
 	$requete->execute(array());
 	$ligne = $requete->fetch();
 	while ($ligne != false)
 	{
-		echo '<img class="imageHotel" src="images/hotel/'.$ligne["imageHotel"].'" />';
-		echo 'Nom Hotel : ' . $ligne["nomHotel"];
-		echo 'Departement Hotel : ' . $ligne["departementHotel"];
-		echo 'Adresse Hotel : ' . $ligne["adresseHotel"];
-		echo 'description Hotel : ' . $ligne["descriptionHotel"];
+		echo '<a href="hotel.php?id='.$ligne["idHotel"].'"><img class="imageHotel" src="images/hotel/'.$ligne["imageHotel"].'" /></a>';
+		echo '<p>Nom Hotel : ' . $ligne["nomHotel"].'</p>';
+		echo '<p>Departement Hotel : ' . $ligne["departementHotel"].'</p>';
+		echo '<p>Adresse Hotel : ' . $ligne["adresseHotel"].'</p>';
+		echo '<p>description Hotel : ' . $ligne["descriptionHotel"].'</p>';
 		echo '<hr>';
 		$ligne = $requete->fetch();
 	}
