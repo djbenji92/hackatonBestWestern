@@ -48,6 +48,29 @@ include("conf/accesBDD.php");
 		$ligne = $requete->fetch();
 	}
 }
+
+function afficheInformationsHotel($id){
+	include("conf/accesBDD.php");
+
+	$sql = "SELECT * 
+			FROM hotels
+			WHERE idHotel = '$id'
+	";
+						
+	$requete = $connexion->prepare($sql);
+	$requete->execute(array());
+	$ligne = $requete->fetch();
+	while ($ligne != false)
+	{
+		echo '<img class="imageHotel" src="images/hotel/'.$ligne["imageHotel"].'" />';
+		echo 'Nom Hotel : ' . $ligne["nomHotel"];
+		echo 'Departement Hotel : ' . $ligne["departementHotel"];
+		echo 'Adresse Hotel : ' . $ligne["adresseHotel"];
+		echo 'description Hotel : ' . $ligne["descriptionHotel"];
+		echo '<hr>';
+		$ligne = $requete->fetch();
+	}
+}
 ?>
 
 
