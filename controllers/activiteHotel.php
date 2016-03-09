@@ -18,6 +18,47 @@ function selectListeHotel(){
 	echo "</select>";
 }
 
+function listeActivite(){
+include("conf/accesBDD.php");
+
+	$sql = "SELECT * from activites";
+	$requete = $connexion->prepare($sql);
+	$requete->execute(array());
+	$ligne = $requete->fetch();
+	while ($ligne != false)
+	{
+		echo '<a href="activite.php?id='.$ligne["idActivite"].'"><img class="imageActivite" src="images/activite/'.$ligne["imageActivite"].'" /></a>';
+		echo 'Nom Activite : ' . $ligne["nomActivite"];
+		echo 'Description activite : ' . $ligne["descriptionActivite"];
+		echo 'Tarif activite : ' . $ligne["tarifActivite"];
+		echo '<hr>';
+		$ligne = $requete->fetch();
+	}
+}
+
+
+function afficheInformationsActivite($id){
+	include("conf/accesBDD.php");
+
+	$sql = "SELECT * 
+			FROM activites
+			WHERE idActivite = '$id'
+	";
+						
+	$requete = $connexion->prepare($sql);
+	$requete->execute(array());
+	$ligne = $requete->fetch();
+	while ($ligne != false)
+	{
+		echo '<img class="imageActivite" src="images/activite/'.$ligne["imageActivite"].'" />';
+		echo 'Nom Activite : ' . $ligne["nomActivite"];
+		echo 'Description activite : ' . $ligne["descriptionActivite"];
+		echo 'Tarif activite : ' . $ligne["tarifActivite"];
+		echo '<hr>';
+		$ligne = $requete->fetch();
+	}
+}
+
 if(isset($_FILES['photoActivite']))
 { 
 	include("../conf/accesBDD.php");
