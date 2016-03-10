@@ -11,11 +11,11 @@ if(isset($_FILES['avatar']))
 { 
 	include("../conf/accesBDD.php");
 
-	$nomHotel = $_POST['nomHotel'];
-	$departementHotel = $_POST['departementHotel'];
-	$adresseHotel = $_POST['adresseHotel'];
-	$villeEtPays = $_POST['villeEtPays'];
-	$description = $_POST['description'];
+	$nomHotel = mysql_escape_string($_POST['nomHotel']);
+	$departementHotel = mysql_escape_string($_POST['departementHotel']);
+	$adresseHotel = mysql_escape_string($_POST['adresseHotel']);
+	$villeEtPays = mysql_escape_string($_POST['villeEtPays']);
+	$description = mysql_escape_string($_POST['description']);
 
      $fichier = basename($_FILES['avatar']['name']);
      if(move_uploaded_file($_FILES['avatar']['tmp_name'], "../images/hotel/".$fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...

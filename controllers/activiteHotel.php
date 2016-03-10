@@ -32,8 +32,8 @@ include("conf/accesBDD.php");
 				echo '<img src="images/activite/'.$ligne["imageActivite"].'" alt="Hôtel">';
 			echo '</a>';
 			echo '<div class="hotel_detail">';
-				echo '<h3><a href="activite.php?id='.$ligne["idActivite"].'">'.$ligne["idActivite"].'</a></h3>';
-				echo '<h4>'.$ligne["idActivite"].'</h4>';
+				echo '<h3><a href="activite.php?id='.$ligne["idActivite"].'">'.$ligne["nomActivite"].'</a></h3>';
+				echo '<h4>'.$ligne["adresseActivite"].'<br>'.$ligne['villeEtPaysActivite'].'</h4>';
 				echo '<p>'. $ligne["descriptionActivite"].'</p>';
 				echo '<a href="activite.php?id='.$ligne["idActivite"].'" class="button">En savoir plus</a>';
 			echo '</div>';
@@ -75,17 +75,19 @@ if(isset($_FILES['photoActivite']))
 { 
 	include("../conf/accesBDD.php");
 
-	$nomActivite = $_POST['nomActivite'];
-	$tarifActivite = $_POST['tarifActivite'];
-	$descriptionActivite = $_POST['descriptionActivite'];
-	$idHotel = $_POST['idHotel'];
+	$nomActivite = mysql_escape_string($_POST['nomActivite']);
+	$tarifActivite = mysql_escape_string($_POST['tarifActivite']);
+	$descriptionActivite = mysql_escape_string($_POST['descriptionActivite']);
+	$idHotel = mysql_escape_string($_POST['idHotel']);
+	$adresseActivite = mysql_escape_string($_POST['adresseActivite']);
+	$villeEtPaysActivite = mysql_escape_string($_POST['villeEtPaysActivite']);
 
 
      $fichier = basename($_FILES['photoActivite']['name']);
      if(move_uploaded_file($_FILES['photoActivite']['tmp_name'], "../images/activite/".$fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
      {
           echo 'Upload effectué avec succès !';
-          $requete = $connexion->prepare("INSERT INTO activites (nomActivite, tarifActivite, descriptionActivite, imageActivite, idHotel) VALUES ('$nomActivite', '$tarifActivite', '$descriptionActivite', '$fichier', '$idHotel')");
+          $requete = $connexion->prepare("INSERT INTO activites (nomActivite, tarifActivite, descriptionActivite, imageActivite, idHotel, adresseActivite, villeEtPaysActivite) VALUES ('$nomActivite', '$tarifActivite', '$descriptionActivite', '$fichier', '$idHotel', '$adresseActivite', '$villeEtPaysActivite')");
 		  $requete->execute(array());
 
      }

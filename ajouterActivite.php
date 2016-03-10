@@ -14,6 +14,8 @@
 		     <?php selectListeHotel(); ?>
 		     <input name="nomActivite" id="nomActivite"  type="text" placeholder="Nom de l'activité">
 			 <input name="tarifActivite" id="tarifActivite" placeholder="Tarif activite" type="text">
+			 <input name="adresseActivite" id="adresseActivite" placeholder="Adresse" type="text">
+			 <input name="villeEtPaysActivite" id="villeEtPaysActivite" placeholder="Ville et pays" type="text">
 			 <textarea name="descriptionActivite" id="descriptionActivite" placeholder="Description de l'activité"></textarea>
 		     <input type="hidden" name="MAX_FILE_SIZE" value="1000000000">
 		     Fichier : <input type="file" name="photoActivite">
