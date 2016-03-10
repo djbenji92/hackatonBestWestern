@@ -11,6 +11,31 @@
 	<div id="addActivite">
 		<form method="POST" action="controllers/activiteHotel.php" enctype="multipart/form-data">
 		     <!-- On limite le fichier à 10Mo -->
+		     <?php 
+		     	include("conf/accesBDD.php");
+
+		     	$sql="SELECT * from categorieActivite";
+
+		     	$requete = $connexion->prepare($sql);
+				$requete->execute(array());
+				$ligne = $requete->fetch();
+				echo '<select name="listeCategorie">';
+				while ($ligne != false)
+				{
+
+					echo '<option value="'.$ligne['idCategorie'].'">'.$ligne['nomCategorie'].'</option>';
+					$ligne = $requete->fetch();
+				}
+				echo '</select>'
+		//
+		/*echo '<a href="hotel.php?id='.$ligne["idHotel"].'"><img class="imageHotel" src="images/hotel/'.$ligne["imageHotel"].'" /></a>';
+		echo '<p>Nom Hotel : ' . $ligne["nomHotel"].'</p>';
+		echo '<p>Departement Hotel : ' . $ligne["departementHotel"].'</p>';
+		echo '<p>Adresse Hotel : ' . $ligne["adresseHotel"].'</p>';
+		echo '<p>description Hotel : ' . $ligne["descriptionHotel"].'</p>';
+		echo '<hr>';*/
+
+		     ?>
 		     <?php selectListeHotel(); ?>
 		     <input name="nomActivite" id="nomActivite"  type="text" placeholder="Nom de l'activité">
 			 <input name="tarifActivite" id="tarifActivite" placeholder="Tarif activite" type="text">

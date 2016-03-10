@@ -4,19 +4,26 @@
 <!-- seulement sur la page enfant (la single, le permalink) activité: -->
 <div class="sidebar_child_activity">
 	<h4><span class="brand">Hotel</span> à proximité</h4>
-	<a href="#">
+	<a href="page_type_hotel.php">
 		<img src="#" alt="Hôtel Saint George">
 	</a>
 	<p>
 		<strong>Hôtel Saint-George</strong>
-		<a href="#" class="button">Voir l'hôtel</a>
+		<a href="page_type_hotel.php" class="button">Voir l'hôtel</a>
 	</p>
 </div>
+<div class="sidebar_child_activity_add">
+	<a href="share_xp.php" class="button">Partagez votre expérience</a>
+	<a href="share_xp_image.php" class="button">Partagez une photo</a>
+</div>
+
+
+
 <!--filtres actualité type:-->
 <div class="sidebar_activity">
 	<h4><span class="brand">Filtrer</span> les résultats par catégorie</h4>
 	<p>
-		<span class="switch_label">Voir les acitivités uniquement disponible autour de moi</span>
+		<span class="switch_label">Voir seulement les acitivités uniquement disponible autour de moi</span>
 		<span class="switch">
             <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox" checked>
             <label for="cmn-toggle-1"></label>
@@ -145,7 +152,7 @@
 
 
 <!-- seulement sur la page parente activité: -->
-<a href="#" class="button">Ajouter une activité</a>
+<a href="add_activity.php" class="button">Ajouter une activité</a>
 
 <!--page hôtel type:-->
 

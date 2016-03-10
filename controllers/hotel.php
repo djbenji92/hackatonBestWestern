@@ -40,7 +40,6 @@ include("conf/accesBDD.php");
 	$ligne = $requete->fetch();
 	while ($ligne != false)
 	{
-
 		echo '<article>';
 			echo '<a href="hotel.php?id='.$ligne["idHotel"].'" class="hotel_image">';
 				echo '<img src="images/hotel/'.$ligne["imageHotel"].'" alt="Hôtel">';
@@ -76,12 +75,39 @@ function afficheInformationsHotel($id){
 	$ligne = $requete->fetch();
 	while ($ligne != false)
 	{
-		echo '<img class="imageHotel" src="images/hotel/'.$ligne["imageHotel"].'" />';
+		echo '<h2>Hôtel</h2>';
+		echo '<h1>'.$ligne["nomHotel"].'</h1>';
+		echo '<div class="slideshow">';
+			//différentes images de l'hôtel-->
+			echo '<div class="slide">';
+				echo '<img src="images/hotel/'.$ligne['imageHotel'].'">';
+			echo '</div>';
+		echo '</div>';
+		echo '<article>';
+			echo '<h3>Description</h3>';
+			echo '<p>'.$ligne['descriptionHotel'].'</p>';
+			echo '<a href="http://book.bestwestern.com/bestwestern/MX/Cd-Victoria-hotels/BEST-WESTERN-Santorin/Hotel-Overview.do?propertyCode=70078" target="_blank" class="button">En savoir plus</a>';
+		echo '</article>';
+		echo '<article>';
+			echo '<h3>Services et activités de l\'hôtel</h3>';
+			echo '<ul>';
+				echo '<li><input type="checkbox" disabled="true" checked> SPA</li>';
+				echo '<li><input type="checkbox" disabled="true" checked> Golf</li>';
+				echo '<li><input type="checkbox" disabled="true" checked> Salle de sport</li>';
+				echo '<li><input type="checkbox" disabled="true" checked> Terrain de tennis</li>';
+				echo '<li><input type="checkbox" disabled="true" checked> Salle de réunion</li>';
+				echo '<li><input type="checkbox" disabled="true" checked> Petit déjeuner gratuit</li>';
+				echo '<li><input type="checkbox" disabled="true" checked> WIFI Gratuit</li>';
+				echo '<li><input type="checkbox" disabled="true"> Animaux</li>';
+			echo '</ul>';
+		echo '</article>';
+		//
+		/*echo '<img class="imageHotel" src="images/hotel/'.$ligne["imageHotel"].'" />';
 		echo 'Nom Hotel : ' . $ligne["nomHotel"];
 		echo 'Departement Hotel : ' . $ligne["departementHotel"];
 		echo 'Adresse Hotel : ' . $ligne["adresseHotel"];
 		echo 'description Hotel : ' . $ligne["descriptionHotel"];
-		echo '<hr>';
+		echo '<hr>';*/
 		$ligne = $requete->fetch();
 	}
 }

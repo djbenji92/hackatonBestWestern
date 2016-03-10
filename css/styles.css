@@ -5,7 +5,7 @@
 body{
 	color:#333;
 	font:15px/1.4 Arial, Helvetica, serif;
-	background:#F0F3F6 url("../images/bg-body.jpg") repeat-x 0 0;
+	/*background:#F0F3F6 url("../images/bg-body.jpg") repeat-x 0 0;*/
 }
 html, body{
 	height:100%;
@@ -14,12 +14,16 @@ html, body{
 	color:#013E88;
 	font-family:'Adelle', Arial;
 }
+
+textarea:focus,
 button:hover,
 button:focus,
 button:active,
 input:focus{
 	outline:none;
 }
+span.fa:hover,
+span.fa:focus,
 button:hover,
 .btn:hover,
 button:focus,
@@ -34,6 +38,7 @@ button:active{
 .slideshow_container:after,
 aside p:after,
 aside div:after,
+section:after,
 main:after,
 article:after,
 #LOGIN p:after{
@@ -46,19 +51,18 @@ article:after,
 /*general*/
 
 main{
-	width:980px;
+	width:100%;
 	margin:0 auto;
 	min-height:100%;
 }
 aside, section{
 	background-color:#fff;
-	border-bottom:50px solid #DCE5EF;
 }
 aside{
-	padding:30px;
+	padding:50px 70px;
 	display:table-cell;
-	width:239px;
-	border-right:1px solid #DCE5EF;
+	width:300px;
+	/*border-right:1px solid #DCE5EF;*/
 }
 #site_navigation{
 	font-size:0;
@@ -92,13 +96,15 @@ aside{
 }
 header{
 	position:relative;
-    height: 95px;
+    height: 125px;
     width: 100%;
     background: #003c7e url("../images/logo-bw-bar.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
 }
 #SEARCH_FORM{
 	position:absolute;
-	bottom:32.5px;
+	bottom:47.5px;
 	right:40px;
 }
 #SEARCH_FORM input, 
@@ -112,16 +118,24 @@ header{
 	margin-right:10px;
 }
 #SEARCH_FORM button{
+	color:#013E88;
 	width:30px;
+	font-size:20px;
 	height:30px;
 	background-color:#fff;
+	vertical-align: -3px;
 }
 footer{
+	border-top:50px solid #DCE5EF;
 	background-color:#F0F3F6;
-	padding:20px 10px 80px;
+	padding:20px 0 80px;
 	color:#8D8D8D;
 	font-size:9px;
 	line-height:2;
+}
+#footer_navigation, footer p{
+	margin:0 auto;
+	width:980px;
 }
 #back_top{
 	margin-right:15px;
@@ -164,14 +178,16 @@ h2{
 	font-size:16px;
 }
 section{
-	padding:50px 50px 90px;
+	padding:50px 0 90px;
+	width:980px;
+	margin:0 auto;
 }
 
 #LOGIN{
 	margin:50px auto 0;
-	width:600px;
-	padding:40px;
-	border:3px solid #DCE5EF;
+	width:650px;
+	/*padding:40px;
+	border:3px solid #DCE5EF;*/
 }
 #LOGIN label i{
 	display:block;
@@ -195,11 +211,16 @@ section{
 	padding:5px 20px;
 }
 .btn{
-	padding:10px;
+	padding:10px 20px;
+	border-radius:3px;
 	background-color:#fff;
 	border:2px solid #DCE5EF;
 	display:table;
 	margin:30px auto 0;
+	text-transform:uppercase;
+	letter-spacing:1px;
+	color:#013E88;
+	font-family:'Adelle', Arial;
 }
 .btn:hover{
 	background-color:#DCE5EF;
@@ -207,9 +228,11 @@ section{
 
 /*profil*/
 #status_image{
-	display:block;
-	margin-bottom:15px;
-	max-width:100%;
+	float: left;
+    width: 70px;
+    height: 70px;
+    border-radius: 3px;
+    margin-right: 30px;
 }
 #home_profil article a{
 	color:#013E88;
@@ -218,7 +241,7 @@ section{
 	font-size:12px;
 	font-style:italic;
 	color:#8D8D8D;
-	margin:10px 0 40px;
+	margin: 10px 100px 30px;
 }
 .user-private input{
 	margin-right:10px;
@@ -250,7 +273,7 @@ section{
 
 /*page hotels*/
 .with_sidebar{
-	width:580px;
+	padding:50px;
 	display:table-cell;
 }
 
@@ -348,6 +371,7 @@ section{
 #hotels_child article ol{
 	font-size:0;
 }
+#forum_parent h3,
 #activity_child h3,
 #hotels_child h3{
 	color:#fff;
@@ -541,7 +565,16 @@ aside > a.button{
 .sidebar_child_activity{
 	margin-bottom:50px;
 }
-
+.sidebar_child_activity_add{
+	border:none;
+}
+.sidebar_child_activity_add a.button{
+	margin:0 0 15px;
+	float:none;
+	padding:10px 0;
+	display:block;
+	text-align:center;
+}
 .sidebar_child_activity > a{
 	width:40px;
 	height:40px;
@@ -562,3 +595,147 @@ aside > a.button{
 	display:block;
 	margin-bottom:5px;
 }
+.sous_titre{
+	font-weight:bold;
+	text-align:left;
+}
+.sous_titre span{
+	font-weight:normal;
+	font-size:12px;
+	color:#8D8D8D;
+	font-style:italic;
+	display:block;
+	margin-top:5px;
+}
+.sous_titre span:before{
+	width:50px;
+	height:5px;
+	content:"";
+	margin-right:10px;
+	border-right:3px solid red;
+	display:inline-block;
+	vertical-align:middle;
+	background-color:green;
+}
+
+
+/*forum*/
+#forum_parent a{
+	color:#013E88;
+}
+#forum_parent ul{
+	padding:10px 30px;
+}
+#forum_parent li:not(last-of-type){
+	margin-bottom:5px;
+}
+#forum_parent article{
+	width:calc(50% - 20px);
+	float:left;
+	margin-top:45px;
+
+}
+#recent_posts{
+	margin-left:40px;
+}
+#forum_parent article a.button{
+	float:none;
+	margin:10px auto 0;
+}
+#recent_posts li span{
+	display:block;
+	font-size:smaller;
+}
+/*forum post*/
+#en_tete{
+	text-align:left;
+	padding:20px;
+}
+.status{
+	display:table;
+	float:right;
+	font-size:smaller;
+}
+#en_tete h3{
+	font-size:25px;
+}
+#forum_post article{
+	margin-top:40px;
+	padding:30px 0;
+}
+#forum_post article:nth-child(odd){
+	background-color:#f6f6f6;
+}
+.profil_part, 
+.text_part{
+	display:table-cell;
+	padding:0 30px;
+}
+.profil_part img{
+	display:block;
+	margin-bottom:10px;
+}
+.profil_part{
+	width:160px;
+	border-right:1px solid #DCE5EF;
+}
+.profil_part a{
+	color:#013E88;
+	text-decoration:none;
+}
+.profil_part a:hover{
+	text-decoration:underline;
+}
+.write_forms{
+	width:100%;
+	margin-top:50px;
+}
+#WRITE_FORUM h5{
+	display: block;
+	text-transform:uppercase;
+	padding:40px 0 20px;
+	font-size:20px;
+	text-align:center;
+	width:100%;
+}
+.write_forms textarea{
+	resize:none;
+	width:calc(100% - 100px);
+	padding:50px;
+	font-size:13px;
+	line-height:1.8;
+	background-color:#fafafa;
+	border-color:#DCE5EF;
+	display:table-cell;
+	min-height:100%;
+}
+#post_assets li#image{
+	text-align:center;
+	margin-bottom:10px;
+	display:block;
+	width:160px;
+}
+#write_container{
+	display:table;
+	min-height:250px;
+}
+
+#post_assets{
+	background:#DCE5EF;
+	width:15%;
+	padding:20px 2.5%;
+	display:table-cell;
+	vertical-align:top;
+	text-align:center;
+	font-size:0;
+}
+
+#post_assets li{
+	list-style-type: none;
+	display:inline-block;
+	font-size:22px;
+	line-height:40px;
+	width:50%;
+}
+
+

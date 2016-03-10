@@ -28,7 +28,7 @@ include("conf/accesBDD.php");
 	while ($ligne != false)
 	{
 		echo '<article>';
-			echo '<a href="activite.php?id='.$ligne["nomActivite"].'" class="hotel_image">';
+			echo '<a href="activite.php?id='.$ligne["idActivite"].'" class="hotel_image">';
 				echo '<img src="images/activite/'.$ligne["imageActivite"].'" alt="Hôtel">';
 			echo '</a>';
 			echo '<div class="hotel_detail">';
@@ -62,11 +62,53 @@ function afficheInformationsActivite($id){
 	$ligne = $requete->fetch();
 	while ($ligne != false)
 	{
-		echo '<img class="imageActivite" src="images/activite/'.$ligne["imageActivite"].'" />';
-		echo 'Nom Activite : ' . $ligne["nomActivite"];
-		echo 'Description activite : ' . $ligne["descriptionActivite"];
+		if($ligne["idCategorie"] >= 1 && $ligne["idCategorie"] < 8){
+			echo '<h2>Restaurant</h2>';
+		}
+		if($ligne["idCategorie"] >= 8 && $ligne["idCategorie"] < 11){
+			echo '<h2>Sport</h2>';
+		}
+		if($ligne["idCategorie"] >= 11 && $ligne["idCategorie"] < 14){
+			echo '<h2>Shopping</h2>';
+		}
+		if($ligne["idCategorie"] >= 14 && $ligne["idCategorie"] < 19){
+			echo '<h2>Tourisme</h2>';
+		}
+		if($ligne["idCategorie"] >= 20 && $ligne["idCategorie"] < 22){
+			echo '<h2>La nuit</h2>';
+		}
+		
+		echo '<h1>'.$ligne["nomActivite"].'</h1>';
+		echo '<div class="slideshow">';
+			echo '<div class="slideshow_container">';
+				//images utilisateurs avec leurs usernames et caption-commentaires -->
+				echo '<div class="slide">';
+					echo '<img src="images/activite/'.$ligne["imageActivite"].'" alt="">';
+					//echo '<div class="caption"><a href="/user/">user name:</a> "Super!"</div>';
+				echo '</div>';
+
+				echo '<div class="slide">';
+					echo '<img src="images/activite/'.$ligne["imageActivite2"].'" alt="">';
+					//echo '<div class="caption"><a href="/user/">user name:</a> "Super!"</div>';
+				echo '</div>';
+
+				echo '<div class="slide">';
+					echo '<img src="images/activite/'.$ligne["imageActivite3"].'" alt="">';
+					//echo '<div class="caption"><a href="/user/">user name:</a> "Super!"</div>';
+				echo '</div>';
+				
+			echo '</div>';
+		echo '</div>';
+		echo '<article>';
+		echo '<h3>Description</h3>';
+		echo '<p>'.$ligne["descriptionActivite"].'</p>';
+		echo '</article>';
+		//
+		/*echo '<img class="imageActivite" src="images/activite/'.$ligne["imageActivite"].'" />';
+		echo 'Nom Activite : ' .$ligne["nomActivite"];
+		echo 'Description activite : ' .$ligne["descriptionActivite"];
 		echo 'Tarif activite : ' . $ligne["tarifActivite"];
-		echo '<hr>';
+		echo '<hr>';*/
 		$ligne = $requete->fetch();
 	}
 }
@@ -81,13 +123,14 @@ if(isset($_FILES['photoActivite']))
 	$idHotel = mysql_escape_string($_POST['idHotel']);
 	$adresseActivite = mysql_escape_string($_POST['adresseActivite']);
 	$villeEtPaysActivite = mysql_escape_string($_POST['villeEtPaysActivite']);
+	$idCategorie = mysql_escape_string($_POST['listeCategorie']);
 
 
      $fichier = basename($_FILES['photoActivite']['name']);
      if(move_uploaded_file($_FILES['photoActivite']['tmp_name'], "../images/activite/".$fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
      {
           echo 'Upload effectué avec succès !';
-          $requete = $connexion->prepare("INSERT INTO activites (nomActivite, tarifActivite, descriptionActivite, imageActivite, idHotel, adresseActivite, villeEtPaysActivite) VALUES ('$nomActivite', '$tarifActivite', '$descriptionActivite', '$fichier', '$idHotel', '$adresseActivite', '$villeEtPaysActivite')");
+          $requete = $connexion->prepare("INSERT INTO activites (nomActivite, tarifActivite, descriptionActivite, imageActivite, idHotel, adresseActivite, villeEtPaysActivite, idCategorie) VALUES ('$nomActivite', '$tarifActivite', '$descriptionActivite', '$fichier', '$idHotel', '$adresseActivite', '$villeEtPaysActivite', $idCategorie)");
 		  $requete->execute(array());
 
      }
