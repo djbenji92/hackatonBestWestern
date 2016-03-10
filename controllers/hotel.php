@@ -14,13 +14,14 @@ if(isset($_FILES['avatar']))
 	$nomHotel = $_POST['nomHotel'];
 	$departementHotel = $_POST['departementHotel'];
 	$adresseHotel = $_POST['adresseHotel'];
+	$villeEtPays = $_POST['villeEtPays'];
 	$description = $_POST['description'];
 
      $fichier = basename($_FILES['avatar']['name']);
      if(move_uploaded_file($_FILES['avatar']['tmp_name'], "../images/hotel/".$fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
      {
           echo 'Upload effectué avec succès !';
-          $requete = $connexion->prepare("INSERT INTO hotels (nomHotel, departementHotel, adresseHotel, descriptionHotel, imageHotel) VALUES ('$nomHotel', '$departementHotel', '$adresseHotel', '$description', '$fichier')");
+          $requete = $connexion->prepare("INSERT INTO hotels (nomHotel, departementHotel, adresseHotel, descriptionHotel, imageHotel, villeEtPays) VALUES ('$nomHotel', '$departementHotel', '$adresseHotel', '$description', '$fichier', '$villeEtPays')");
 		  $requete->execute(array());
 
      }

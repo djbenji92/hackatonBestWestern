@@ -28,7 +28,7 @@ include("conf/accesBDD.php");
 	while ($ligne != false)
 	{
 		echo '<article>';
-			echo '<a href="activite.php?id='.$ligne["idActivite"].'" class="hotel_image">';
+			echo '<a href="activite.php?id='.$ligne["nomActivite"].'" class="hotel_image">';
 				echo '<img src="images/activite/'.$ligne["imageActivite"].'" alt="Hôtel">';
 			echo '</a>';
 			echo '<div class="hotel_detail">';
