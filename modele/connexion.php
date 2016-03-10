@@ -23,6 +23,7 @@ else {
 	session_start();
 	$_SESSION['user']=$username;
 	echo "Connexion réussi !";
+	//header('Location: profil.php'); 
 }
 
 

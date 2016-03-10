@@ -8,14 +8,19 @@
 	<body>
 	<?php include("controllers/hotel.php"); ?>
 
-	<div id="Liste hotel">
-		<h1>Liste des hotels</h1>
-		<?php listeHotel(); ?>
-		
+	<?php include 'includes/header.inc.php'; include 'includes/sidebar.inc.php';?>
+	<section id="hotels_parent" class="with_sidebar">
+	<h2>Le meilleur de <span class="branding">Best Western</span></h2>
+	<h1>Nos hôtels</h1>
+	
+	<?php listeHotel(); ?>
 
-	</div>
+	<a class="load_more btn">Voir plus d'hôtels</a>
+	</section>
+	<?php include 'includes/footer.inc.php'; ?>
 
 	
 	</body>
 
 </html>
+

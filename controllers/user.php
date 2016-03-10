@@ -1,7 +1,7 @@
 <script>
 
 $("#inscription").click(function(){
-	var username = $("#username").val();
+	var username = $("#email").val();
     var password = $("#password").val();
     var random = parseInt(Math.random() * 10000000000);
 		
@@ -30,7 +30,7 @@ $("#inscription").click(function(){
 });
 
 $("#connexion").click(function(){
-	var username = $("#username").val();
+	var username = $("#email").val();
     var password = $("#password").val();
 		
 	//AJAX pour envoyer valeur dans base de données
@@ -45,7 +45,8 @@ $("#connexion").click(function(){
 	if (xhr.readyState == 4)
 		if (xhr.status == 200){
 			//alert('ok');
-			console.log(xhr.responseText);	
+			console.log(xhr.responseText);
+			document.location.href="profil.php"	
 		}
 		//document.getElementById("mydiv").innerHTML=xhr.responseText;
 		else

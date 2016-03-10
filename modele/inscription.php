@@ -41,6 +41,7 @@ else{
 	session_start();
 	$_SESSION['user']=$username;
 	echo 'Felicitation vous etes bien inscrit !';
+	
 }
 
 ?>

@@ -39,12 +39,25 @@ include("conf/accesBDD.php");
 	$ligne = $requete->fetch();
 	while ($ligne != false)
 	{
-		echo '<a href="hotel.php?id='.$ligne["idHotel"].'"><img class="imageHotel" src="images/hotel/'.$ligne["imageHotel"].'" /></a>';
+
+		echo '<article>';
+			echo '<a href="hotel.php?id='.$ligne["idHotel"].'" class="hotel_image">';
+				echo '<img src="images/hotel/'.$ligne["imageHotel"].'" alt="Hôtel">';
+			echo '</a>';
+			echo '<div class="hotel_detail">';
+				echo '<h3><a href="hotel.php?id='.$ligne["idHotel"].'">' . $ligne["nomHotel"].'</a></h3>';
+				echo '<h4>'.$ligne["adresseHotel"].'<br>'.$ligne['villeEtPays'].'</h4>';
+				echo '<p>' . $ligne["descriptionHotel"].'</p>
+				<a href="hotel.php?id='.$ligne["idHotel"].'" class="button">En savoir plus</a>';
+			echo '</div>';
+		echo '</article>';
+		//
+		/*echo '<a href="hotel.php?id='.$ligne["idHotel"].'"><img class="imageHotel" src="images/hotel/'.$ligne["imageHotel"].'" /></a>';
 		echo '<p>Nom Hotel : ' . $ligne["nomHotel"].'</p>';
 		echo '<p>Departement Hotel : ' . $ligne["departementHotel"].'</p>';
 		echo '<p>Adresse Hotel : ' . $ligne["adresseHotel"].'</p>';
 		echo '<p>description Hotel : ' . $ligne["descriptionHotel"].'</p>';
-		echo '<hr>';
+		echo '<hr>';*/
 		$ligne = $requete->fetch();
 	}
 }

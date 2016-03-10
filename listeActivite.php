@@ -8,14 +8,16 @@
 	<body>
 	<?php include("controllers/activiteHotel.php"); ?>
 
-	<div id="Liste hotel">
-		<h1>Liste des activités</h1>
-		<?php listeActivite(); ?>
-		
+	<?php include 'includes/header.inc.php'; include 'includes/sidebar.inc.php';?>
+	<section id="activites_parent" class="with_sidebar">
+	<h2>Le meilleur de <span class="branding">Best Western</span></h2>
+	<h1>Activités</h1>
+	<?php listeActivite(); ?>
+	<a class="load_more btn">Voir plus d'activités</a>
+	</section>
+	<?php include 'includes/footer.inc.php'; ?>
 
-	</div>
-
-	
 	</body>
 
 </html>
+
