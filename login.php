@@ -13,7 +13,7 @@
 		<h1>BW Connect</h1>
 		<p><i>Réseau social pour les clients des hôtels <span class="brand">Best Western</span>.</i></p>
 		<article>
-			<form action="#" method="POST" id="LOGIN" autocomplete="off">
+			<form id="LOGIN" autocomplete="off">
 				<h3>Se connecter à  <span class="brand">BW Connect</span></h3>
 				<p>
 					<label for="email">
@@ -27,7 +27,7 @@
 						Mot de passe*
 						<i>* de votre compte <span class="brand">Best Western</span></i>
 					</label>
-					<input id="passeword" type="password" name="password" placeholder="Votre mot de passe" id="password">
+					<input type="password" name="password" placeholder="Votre mot de passe" id="password">
 				</p>
 				<p>
 					<button name="login" id="connexion" class="btn">Se connecter</button>

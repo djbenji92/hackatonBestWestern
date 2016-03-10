@@ -15,15 +15,12 @@ $countUsername = $listeUtilisateur->rowCount();
 
 if($countUsername == 0)
 {
-	echo "Erreur d'authentification";
+	echo "0";
 }
-
-
 else {
 	session_start();
 	$_SESSION['user']=$username;
-	echo "Connexion réussi !";
-	//header('Location: profil.php'); 
+	echo "1";
 }
 
 

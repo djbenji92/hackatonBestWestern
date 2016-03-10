@@ -44,9 +44,13 @@ $("#connexion").click(function(){
 	xhr.onreadystatechange = function () {
 	if (xhr.readyState == 4)
 		if (xhr.status == 200){
-			//alert('ok');
-			console.log(xhr.responseText);
-			document.location.href="profil.php"	
+			if(xhr.responseText == 1){
+				document.location.href="profil.php";
+			}
+			else {
+				alert('erreur authentification');
+			}
+				
 		}
 		//document.getElementById("mydiv").innerHTML=xhr.responseText;
 		else
