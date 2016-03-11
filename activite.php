@@ -58,7 +58,7 @@ session_start();
 			?>
 		</div>
 		<div class="sidebar_child_activity_add">
-			<a href="share_xp.php" class="button">Partagez votre expérience</a>
+			<?php echo '<a href="share_xp.php?id='.$id.'" class="button">Partagez votre expérience</a>'; ?>
 			<a href="share_xp_image.php" class="button">Partagez une photo</a>
 		</div>
 	</aside>
@@ -78,62 +78,44 @@ session_start();
 			<h3>Autres activités aux alentours l'hôtel</h3>
 			<h4>Par popularité:</h4>
 			<ol>
-				<li>
-					<a href="page_type_activite.php">
-						<img src="#" alt="Viva la vida">
-						<span>Boite de nuit: <b>Viva la Vida</b></span>
-					</a>
-				</li>
-				<li>
-					<a href="page_type_activite.php">
-						<img src="#" alt="Parc Victor Hugo">
-						<span>Ballade: <b>Parc Victor Hugo</b></span>
-					</a>
-				</li>
-				<li>
-					<a href="page_type_activite.php">
-						<img src="#" alt="Musée Libération">
-						<span>Culture: <b>Musée Libération</b></span>
-					</a>
-				</li>
-				<li>
-					<a href="page_type_activite.php">
-						<img src="#" alt="Viva la vida">
-						<span>Boite de nuit: <b>Viva la Vida</b></span>
-					</a>
-				</li>
-				<li>
-					<a href="page_type_activite.php">
-						<img src="#" alt="Parc Victor Hugo">
-						<span>Ballade: <b>Parc Victor Hugo</b></span>
-					</a>
-				</li>
-				<li>
-					<a href="page_type_activite.php">
-						<img src="#" alt="Musée Libération">
-						<span>Culture: <b>Musée Libération</b></span>
-					</a>
-				</li>
+				<?php
+					$sql="SELECT nomActivite, idActivite, imageActivite FROM activites WHERE idHotel = '$idHotel' AND idActivite <> '$id'";
+					$requete = $connexion->prepare($sql);
+					$requete->execute(array());
+					$ligne = $requete->fetch();
+					while ($ligne != false)
+					{
+						echo '<li>';
+							echo '<a href="activite.php?id='.$ligne['idActivite'].'">';
+								echo '<img src="images/activite/'.$ligne['imageActivite'].'" alt="'.$ligne['nomActivite'].'">';
+								echo '<span><b>'.$ligne['nomActivite'].'</b></span>';
+							echo '</a>';
+						echo '</li>';
+						
+						$ligne = $requete->fetch();
+					}
+				?>
+				
 			</ol>
-			<a href="#" class="button">Ajouter une activité aux alentours</a>
+			<?php echo '<a href="add_activity.php?id='.$idHotel.'" class="button">Ajouter une activité aux alentours</a>';?>
 		</article>
 	</section>
 <?php include 'includes/footer.inc.php'; ?>
 
-	<h2>Poster un commentaire</h2>
+	<!--<h2>Poster un commentaire</h2>-->
 	<?php
-		$user = $_SESSION['user'];
+		//$user = $_SESSION['user'];
 	?>
-	<div id="user"><?php echo $user ?></div>
-	<div id="id"><?php echo $id ?></div>
+	<div id="user"><?php //echo $user ?></div>
+	<div id="id"><?php //echo $id ?></div>
 
 	<?php
 
-		if($user !== ""){
+		/*if($user !== ""){
 			echo'connecter';
 			echo'<textarea name="commentaireActivite" id="commentaireActivite" placeholder="Partager votre experience..."></textarea>';
 			echo '<button id="envoyerCommentaire">Envoyer</button>';
-		}
+		}*/
 	?>
 
 

@@ -12,6 +12,6 @@
 			<li><span class="fa fa-align-center"></span></li>
 		</ul>
 	</div>
-	<textarea placeholder="Caption facultative..."></textarea>
+	<textarea></textarea>
 </div>
 <button type="submit" class="btn">Poster</button>

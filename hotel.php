@@ -10,13 +10,14 @@
 
 	<?php 
 		$id = $_GET['id'];
+
 	?>
 	
 
 	<?php 
 		include 'includes/header.inc.php'; 
 		//include 'includes/sidebar.inc.php'
-	;?>
+	?>
 	<aside>
 		<div class="sidebar_hotel">
 			<h4>Services</h4>
@@ -43,44 +44,27 @@
 			<h3>Services et activités aux alentours l'hôtel</h3>
 			<h4>Par popularité:</h4>
 			<ol>
-				<li>
-					<a href="page_type_activite.php">
-						<img src="#" alt="Viva la vida">
-						<span>Boite de nuit: <b>Viva la Vida</b></span>
-					</a>
-				</li>
-				<li>
-					<a href="page_type_activite.php">
-						<img src="#" alt="Parc Victor Hugo">
-						<span>Ballade: <b>Parc Victor Hugo</b></span>
-					</a>
-				</li>
-				<li>
-					<a href="page_type_activite.php">
-						<img src="#" alt="Musée Libération">
-						<span>Culture: <b>Musée Libération</b></span>
-					</a>
-				</li>
-				<li>
-					<a href="page_type_activite.php">
-						<img src="#" alt="Viva la vida">
-						<span>Boite de nuit: <b>Viva la Vida</b></span>
-					</a>
-				</li>
-				<li>
-					<a href="page_type_activite.php">
-						<img src="#" alt="Parc Victor Hugo">
-						<span>Ballade: <b>Parc Victor Hugo</b></span>
-					</a>
-				</li>
-				<li>
-					<a href="page_type_activite.php">
-						<img src="#" alt="Musée Libération">
-						<span>Culture: <b>Musée Libération</b></span>
-					</a>
-				</li>
+				<?php
+					include('conf/accesBDD.php');
+
+					$sql="SELECT nomActivite, idActivite, imageActivite FROM activites WHERE idHotel = '$id'";
+					$requete = $connexion->prepare($sql);
+					$requete->execute(array());
+					$ligne = $requete->fetch();
+					while ($ligne != false)
+					{
+						echo '<li>';
+							echo '<a href="activite.php?id='.$ligne['idActivite'].'">';
+								echo '<img src="images/activite/'.$ligne['imageActivite'].'" alt="'.$ligne['nomActivite'].'">';
+								echo '<span><b>'.$ligne['nomActivite'].'</b></span>';
+							echo '</a>';
+						echo '</li>';
+						
+						$ligne = $requete->fetch();
+					}
+				?>
 			</ol>
-			<a href="#" class="button">Ajouter une activité aux alentours</a>
+			<?php echo '<a href="add_Activity.php?id='.$id.'" class="button">Ajouter une activité aux alentours</a>'; ?>
 			<!-- <form action="#" method="POST" id="POST_ACTIVITY">
 				<input type="hidden" value="USER NAME" name="username">
 				<input type="hidden" value="USER NAME" name="username">

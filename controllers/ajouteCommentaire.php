@@ -15,5 +15,7 @@
 	$requete = $connexion->prepare("INSERT INTO avisActivite (avis, idActivite, user, dateAvis) VALUES ('$avis', '$id', '$user', '$datePost')");
 	$requete->execute(array());
 
+	echo $id;
+
 	//header('Location: activite.php?id='.$id);
 ?>

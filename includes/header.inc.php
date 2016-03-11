@@ -18,7 +18,7 @@
 			<li><a href="profil.php">Accueil</a></li>
 			<li><a href="listeHotel.php">Nos hôtels</a></li>
 			<li><a href="listeActivite.php">Activités</a></li>
-			<li><a href="#">Communautés</a></li>
+			<li><a href="community_parent.php">Communautés</a></li>
 			<li><a href="forum_parent.php">Forums</a></li>
 		</ul>
 	</nav>

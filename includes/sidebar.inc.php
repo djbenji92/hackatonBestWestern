@@ -1,5 +1,55 @@
 <aside>
+<!-- seulement sur la page parent communité: -->
+<div class="sidebar_parent_community">
+	<h4>Rechercher un <span class="brand">groupe</span></h4>
+	<form action="#" id="SEARCH_COMMUNITY" method="GET">
+		<p>Qu'aimez-vous faire dans nos hôtels?</p>
+		<p>
+			<input type="text" name="search_com" id="search_com" placeholder="Ex: SPA, Sport...">
+			<button type="submit" class="ion-search"></button>
+		</p>
+	</form>
+</div>
+<div class="sidebar_child_activity_add">
+	<a href="create_community.php" class="button">Créer une communauté</a>
+</div>
 
+
+<!-- seulement sur la page parent hotels: -->
+<div class="sidebar_parent_community">
+	<h4>Rechercher un <span class="brand">hôtel</span></h4>
+	<form action="#" id="SEARCH_COMMUNITY" method="GET">
+		<p>
+			<input type="text" name="search_com" id="search_com" placeholder="Saisissez une ville, un pays...">
+			<button type="submit" class="ion-search"></button>
+		</p>
+	</form>
+</div>
+
+<!-- seulement sur la page d'une communauté: -->
+<div class="sidebar_child_community_members">
+	<h4>Membres de la <span class="brand">communauté</span></h4>
+	<ul>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+		<li><a href="/user/" title="[User Name]"><img src="#"></a></li>
+	</ul>
+</div>
 
 <!-- seulement sur la page enfant (la single, le permalink) activité: -->
 <div class="sidebar_child_activity">
@@ -18,12 +68,26 @@
 </div>
 
 
+<!-- seulement sur la page ajouter une activité: -->
+<div class="sidebar_child_activity">
+	<h4>Activité</h4>
+	<a href="page_type_activity.php">
+		<img src="#" alt="Activité blablablbal">
+	</a>
+	<p>
+		<strong>[Activity Name]</strong>
+		<a href="page_type_hotel.php" class="button">Voir l'activité</a>
+	</p>
+</div>
+
+
+
 
 <!--filtres actualité type:-->
 <div class="sidebar_activity">
 	<h4><span class="brand">Filtrer</span> les résultats par catégorie</h4>
 	<p>
-		<span class="switch_label">Voir seulement les acitivités uniquement disponible autour de moi</span>
+		<span class="switch_label">Voir seulement les acitivités disponible autour de moi</span>
 		<span class="switch">
             <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox" checked>
             <label for="cmn-toggle-1"></label>
@@ -69,17 +133,17 @@
 	        	<label for="sport">Sport</label>
 	        	<input type="checkbox" id="sport" class="parent_toggle">
 	        	<ol>
-	        		<li>
-			        	<label for="etablissement">Établissements</label>
-			        	<input type="checkbox" id="etablissement">
-		        	</li>
 		        	<li>
 			        	<label for="parcs">Parcs d'exercices</label>
 			        	<input type="checkbox" id="parcs">
 		        	</li>
 		        	<li>
-			        	<label for="salles">Salles indépendantes</label>
+			        	<label for="salles">Salles de sport</label>
 			        	<input type="checkbox" id="salles">
+		        	</li>
+	        		<li>
+			        	<label for="autres">Autres sports</label>
+			        	<input type="checkbox" id="autres">
 		        	</li>
 	        	</ol>
 	        </li>
