@@ -78,9 +78,11 @@ function afficheInformationsHotel($id){
 		echo '<h2>Hôtel</h2>';
 		echo '<h1>'.$ligne["nomHotel"].'</h1>';
 		echo '<div class="slideshow">';
-			//différentes images de l'hôtel-->
-			echo '<div class="slide">';
-				echo '<img src="images/hotel/'.$ligne['imageHotel'].'">';
+			echo '<div class="slideshow_container">';
+				//différentes images de l'hôtel-->
+				echo '<div class="slide">';
+					echo '<img src="images/hotel/'.$ligne['imageHotel'].'">';
+				echo '</div>';
 			echo '</div>';
 		echo '</div>';
 		echo '<article>';

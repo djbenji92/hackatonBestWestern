@@ -8,7 +8,7 @@
 	<body>
 
 		<?php include 'includes/header.inc.php';// include 'includes/sidebar.inc.php';?>
-		<section id="activites_add" class="with_sidebar">
+		<section id="activites_add" >
 		<?php
 
 			$id = $_GET['id'];

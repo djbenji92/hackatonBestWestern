@@ -84,17 +84,17 @@ function afficheInformationsActivite($id){
 				//images utilisateurs avec leurs usernames et caption-commentaires -->
 				echo '<div class="slide">';
 					echo '<img src="images/activite/'.$ligne["imageActivite"].'" alt="">';
-					//echo '<div class="caption"><a href="/user/">user name:</a> "Super!"</div>';
+					echo '<div class="caption"><a href="/user/">demoPrenom demoNom</a> "Super!"</div>';
 				echo '</div>';
 
 				echo '<div class="slide">';
 					echo '<img src="images/activite/'.$ligne["imageActivite2"].'" alt="">';
-					//echo '<div class="caption"><a href="/user/">user name:</a> "Super!"</div>';
+					echo '<div class="caption"><a href="/user/">demoPrenom demoNom</a> "Super!"</div>';
 				echo '</div>';
 
 				echo '<div class="slide">';
 					echo '<img src="images/activite/'.$ligne["imageActivite3"].'" alt="">';
-					//echo '<div class="caption"><a href="/user/">user name:</a> "Super!"</div>';
+					echo '<div class="caption"><a href="/user/">demoPrenom demoNom</a> "Super!"</div>';
 				echo '</div>';
 				
 			echo '</div>';

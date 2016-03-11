@@ -1,5 +1,5 @@
-<?php include 'includes/header.inc.php'; include 'includes/sidebar.inc.php';?>
-<section id="group_add" class="with_sidebar">
+<?php include 'includes/header.inc.php'; //include 'includes/sidebar.inc.php';?>
+<section id="group_add" >
 <h2>Devenez social,</h2>
 <h1>Créez votre communauté</h1>
 <article>

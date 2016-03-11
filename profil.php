@@ -40,7 +40,7 @@
 	
 	<?php include 'includes/header.inc.php'; ?>
 	<section id="home_profil">
-		<img src="#" alt="membre gold" id="status_image">
+		<img src="images/communaute/gold.png" alt="membre gold" id="status_image">
 		<h2>Bienvenue </h2>
 		<h1><?php echo $prenom . " " . $nom;?></h1>
 

@@ -17,7 +17,7 @@ session_start();
 		?>
 
 		<?php include 'includes/header.inc.php';// include 'includes/sidebar.inc.php';?>
-		<section id="experience_add" class="with_sidebar">
+		<section id="experience_add">
 
 		<?php
 		$sql = "SELECT nomActivite FROM activites WHERE idActivite = '$id'";
