@@ -30,7 +30,7 @@
 			<article>
 				<h4><a href="page_type_community.php">Club Golf</a></h4>
 				<h5><span class="ion-ios-people"></span> 24 membres   |   <span class="ion-ios-clock-outline"></span> Créé le 24-12-2016</h5>
-				<p>Club #OKLM pour les p'tites sorties sur le terrain tavu</p>
+				<p>Bienvenue chez les fans de la détente.</p>
 				<a href="#" class="btn">Rejoindre</a> <a href="page_type_community.php" class="btn">Accès à la page</a>
 			</article>
 			<article>
@@ -40,15 +40,15 @@
 				<a href="#" class="btn">Rejoindre</a> <a href="page_type_community.php" class="btn">Accès à la page</a>
 			</article>
 			<article>
-				<h4><a href="page_type_community.php">Club Premium</a></h4>
-				<h5><span class="ion-ios-people"></span> 24 membres   |   <span class="ion-ios-clock-outline"></span> Créé le 24-12-2016</h5>
-				<p>Club #OKLM tavu</p>
+				<h4><a href="page_type_community.php">Bon plan Best Western</a></h4>
+				<h5><span class="ion-ios-people"></span> 21 membres   |   <span class="ion-ios-clock-outline"></span> Créé le 24-12-2016</h5>
+				<p>À travrs cette page nous publierons toutes les bonnes affaire à saisir sur Best Western.</p>
 				<a href="#" class="btn">Rejoindre</a> <a href="page_type_community.php" class="btn">Accès à la page</a>
 			</article>
 			<article>
-				<h4><a href="page_type_community.php">Club Premium</a></h4>
-				<h5><span class="ion-ios-people"></span> 24 membres   |   <span class="ion-ios-clock-outline"></span> Créé le 24-12-2016</h5>
-				<p>Club #OKLM tavu</p>
+				<h4><a href="page_type_community.php">Club food</a></h4>
+				<h5><span class="ion-ios-people"></span> 28 membres   |   <span class="ion-ios-clock-outline"></span> Créé le 24-12-2016</h5>
+				<p>Nous somme le club gastronomique !</p>
 				<a href="#" class="btn">Rejoindre</a> <a href="page_type_community.php" class="btn">Accès à la page</a>
 			</article>
 		</section>

@@ -8,13 +8,13 @@
 	<body>
 	
 		
-	<!--<div id="inscriptionCompte">
+	<div id="inscriptionCompte">
 		<h1>Inscription</h1>
 
 		<input id="username" name="username" type="text" placeholder="email">
 		<input id="password" name="password" type="password">
 		<button id="inscription">inscription</button>
-	</div>-->
+	</div>
 
 	<?php include 'includes/header.inc.php'; ?>
 	<section id="home_register">
